@@ -40,6 +40,7 @@
     </div>
 
     <script>
+        window.Telegram.WebApp.expand();
         Telegram.WebApp.onEvent('themeChanged', applyTheme);
         function applyTheme() {
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.bg_color;
