@@ -44,7 +44,7 @@
         window.Telegram.WebApp.expand();
         Telegram.WebApp.onEvent('themeChanged', applyTheme);
         function applyTheme() {
-            document.body.style.backgroundColor = Telegram.WebApp.themeParams.bg_color;
+            document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             document.body.style.color = Telegram.WebApp.themeParams.text_color;
         }
         applyTheme();
