@@ -3,11 +3,12 @@
 <head>
     <title>Mentors Search App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: var(--tg-theme-secondary-bg-color);
             color: var(--tg-theme-text-color);
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,29 +20,46 @@
             text-align: center;
             max-width: 600px;
             padding: 20px;
-            background: var(--tg-theme-secondary-bg-color);
+            background-color: var(--tg-theme-secondary-bg-color);
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-spacing: 10px;
         }
         h1 {
             margin-bottom: 20px;
         }
-        p {
-            line-height: 1.5;
+        p, ul {
+            background-color: var(--tg-theme-secondary-bg-color);
+            color: var(--tg-theme-text-color);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div style="font-size: 100px;">📚</div>
         <h1>Mentors Search App</h1>
         <p>
-            Studying is a journey that requires dedication, persistence, and the right guidance. Finding the perfect mentor can make a world of difference in your educational pursuits, offering insights and support that are invaluable to your academic success.
+            Finding the right mentor in your field is crucial for your growth and success. A mentor provides guidance, support, and invaluable insights that help you navigate your academic and professional journey with confidence.
         </p>
+        <h2>Основные функции бота</h2>
+        <ul>
+            <li>Регистрация наставника</li>
+            <li>Поиск наставника</li>
+            <li>Интеграция с Telegram Mini-App</li>
+            <li>Подтверждение подписки</li>
+            <li>Полезная информация</li>
+            <li>Управление сообщениями</li>
+            <li>Аналитика</li>
+            <li>Подписка на канал "Немецкий Гастарбайтер"</li>
+        </ul>
     </div>
 
     <script>
-        window.Telegram.WebApp.expand();
         Telegram.WebApp.onEvent('themeChanged', applyTheme);
         function applyTheme() {
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
