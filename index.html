@@ -1,35 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <title>Mentors Search App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="mainscript.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        body{
-	color: var(--tg-theme-text-color);
-	background: var(--tg-theme-bg-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-size: 18px;
-    }
-
-    .hint{
-        color: var(--tg-theme-hint-color);
-    }
-
-    .link{
-        color: var(--tg-theme-link-color);
-    }
-
+        body {
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background: var(--tg-theme-secondary-bg-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
-    <h1>text</h1>
-    <p>TEST PARAGRAPH</p>
+    <div class="container">
+        <h1>Mentors Search App</h1>
+        <p>
+            Studying is a journey that requires dedication, persistence, and the right guidance. Finding the perfect mentor can make a world of difference in your educational pursuits, offering insights and support that are invaluable to your academic success.
+        </p>
+    </div>
+
+    <script>
+        Telegram.WebApp.onEvent('themeChanged', applyTheme);
+        function applyTheme() {
+            document.body.style.backgroundColor = Telegram.WebApp.themeParams.bg_color;
+            document.body.style.color = Telegram.WebApp.themeParams.text_color;
+        }
+        applyTheme();
+    </script>
 </body>
 </html>
