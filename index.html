@@ -37,34 +37,31 @@
             border-radius: 8px;
         }
         .menu-bar {
-            backdrop-filter: blur(10px);
             position: fixed;
-            bottom: 10px;
-            width: calc(100% - 20px);
-            margin: 0 10px;
+            bottom: 0;
+            width: 100%;
             display: flex;
             justify-content: space-around;
             padding: 10px 0;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            background-color: var(--tg-theme-bg-color);
+            border-radius: 0;
         }
         .menu-bar a {
             text-decoration: none;
-            color: var(--tg-theme-text-color);
+            color: white;
             font-size: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: var(--tg-theme-bg-color);
+            background-color: var(--tg-theme-secondary-bg-color);
             border-radius: 8px;
             padding: 8px;
             margin: 5px;
         }
         .menu-bar a span {
             font-size: 20px;
-            color: var(--tg-theme-secondary-text-color);
+            color: white;
         }
         .image-container {
             display: flex;
@@ -136,11 +133,11 @@
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             document.body.style.color = Telegram.WebApp.themeParams.text_color;
             document.querySelectorAll('.menu-bar a').forEach(function(el) {
-                el.style.color = Telegram.WebApp.themeParams.text_color;
-                el.style.backgroundColor = Telegram.WebApp.themeParams.bg_color;
+                el.style.color = 'white';
+                el.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             });
             document.querySelectorAll('.menu-bar span').forEach(function(el) {
-                el.style.color = Telegram.WebApp.themeParams.secondary_text_color;
+                el.style.color = 'white';
             });
         }
         function hideLoader() {
