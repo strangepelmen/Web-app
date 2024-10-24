@@ -33,9 +33,7 @@
             border-radius: 8px;
         }
         .menu-bar {
-            background-color: var(--tg-theme-bg-color);
             backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.8); /* adjust transparency */
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -104,7 +102,6 @@
         function applyTheme() {
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             document.body.style.color = Telegram.WebApp.themeParams.text_color;
-            document.querySelector('.menu-bar').style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; /* adjust transparency */
             document.querySelectorAll('.menu-bar a').forEach(function(el) {
                 el.style.color = Telegram.WebApp.themeParams.bg_color;
                 el.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
