@@ -48,7 +48,7 @@
         }
         .menu-bar a {
             text-decoration: none;
-            color: white;
+            color: var(--tg-theme-text-color); /* Text color matching user's theme */
             font-size: 14px;
             display: flex;
             flex-direction: column;
@@ -56,15 +56,15 @@
             justify-content: center; /* Center text */
             background-color: var(--tg-theme-secondary-bg-color);
             border-radius: 8px;
-            padding: 8px;
-            width: 90px; /* Uniform width */
-            height: 40px; /* Uniform height */
+            padding: 10px; /* Increased padding for bigger buttons */
+            width: 100px; /* Uniform width */
+            height: 50px; /* Uniform height */
             box-sizing: border-box;
             margin: 0 10px; /* Added space between buttons */
         }
         .menu-bar a span {
             font-size: 20px;
-            color: white;
+            color: var(--tg-theme-text-color); /* Text color matching user's theme */
         }
         .image-container {
             display: flex;
@@ -140,11 +140,11 @@
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             document.body.style.color = Telegram.WebApp.themeParams.text_color;
             document.querySelectorAll('.menu-bar a').forEach(function(el) {
-                el.style.color = 'white';
+                el.style.color = Telegram.WebApp.themeParams.text_color;
                 el.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             });
             document.querySelectorAll('.menu-bar span').forEach(function(el) {
-                el.style.color = 'white';
+                el.style.color = Telegram.WebApp.themeParams.text_color;
             });
         }
         function hideLoader() {
