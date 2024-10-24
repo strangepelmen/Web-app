@@ -22,6 +22,10 @@
             margin: 0 auto;
             flex: 1;
         }
+        .emoji {
+            font-size: 100px;
+            margin-top: 20px;
+        }
         h1 {
             margin-bottom: 20px;
         }
@@ -40,26 +44,26 @@
             margin: 0 10px;
             display: flex;
             justify-content: space-around;
-            padding: 15px 0;
+            padding: 10px 0;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            font-size: 18px;
+            font-size: 16px;
             background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
+            border-radius: 10px;
         }
         .menu-bar a {
             text-decoration: none;
             color: var(--tg-theme-text-color);
-            font-size: 16px;
+            font-size: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
             background-color: var(--tg-theme-bg-color);
             border-radius: 8px;
-            padding: 10px;
+            padding: 8px;
             margin: 5px;
         }
         .menu-bar a span {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--tg-theme-secondary-text-color);
         }
         .image-container {
@@ -68,8 +72,8 @@
             flex-wrap: wrap;
         }
         .image-container img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             margin: 10px;
             border-radius: 15px;
         }
@@ -103,9 +107,8 @@
     <div id="loader">
         <div class="loader-spin"></div>
     </div>
-
     <div class="container" id="home" style="display: none;">
-        <div style="font-size: 100px;">📚</div>
+        <div class="emoji">🎓</div> <!-- Big emoji at the top -->
         <h1>Mentors Search App</h1>
         <p>
             Learning is a continuous journey, and finding the right mentor can make all the difference. Mentors provide guidance, support, and wisdom that can help you navigate your path to success.
@@ -122,14 +125,12 @@
             <img src="https://via.placeholder.com/100?text=3" alt="Free Image 3">
         </div>
     </div>
-
     <div class="menu-bar">
         <a href="#home"><span>🏠</span>Home</a>
-        <a href="#profile"><span>👤</span>My Profile</a>
-        <a href="#mentors"><span>🧑‍🏫</span>Mentors</a>
+        <a href="#profile"><span>👤</span>Profile</a>
+        <a href="#mentors"><span>📚</span>Mentors</a>
         <a href="#faq"><span>❓</span>FAQ</a>
     </div>
-
     <script>
         function applyTheme() {
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
@@ -142,17 +143,14 @@
                 el.style.color = Telegram.WebApp.themeParams.secondary_text_color;
             });
         }
-
         function hideLoader() {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('home').style.display = 'block';
         }
-
         window.addEventListener('load', function() {
             applyTheme();
             hideLoader();
         });
-
         Telegram.WebApp.onEvent('themeChanged', applyTheme);
     </script>
 </body>
