@@ -21,6 +21,10 @@
             padding: 20px;
             margin: 0 auto;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         h1 {
             margin-bottom: 20px;
@@ -106,9 +110,8 @@
     <div id="loader">
         <div class="loader-spin"></div>
     </div>
-
     <div class="container" id="home" style="display: none;">
-        <div style="font-size: 100px;">📚</div>
+        <div style="font-size: 100px;"></div>
         <h1>Mentors Search App</h1>
         <p>
             Learning is a continuous journey, and finding the right mentor can make all the difference. Mentors provide guidance, support, and wisdom that can help you navigate your path to success.
@@ -126,14 +129,12 @@
         </div>
         <div class="space-below"></div>
     </div>
-
     <div class="menu-bar">
-        <a href="#home"><span>🏠</span>Home</a>
-        <a href="#profile"><span>👤</span>Profile</a>
-        <a href="#mentors"><span>🧑‍🏫</span>Mentors</a>
+        <a href="#home"><span></span>Home</a>
+        <a href="#profile"><span></span>Profile</a>
+        <a href="#mentors"><span></span>Mentors</a>
         <a href="#faq"><span>❓</span>FAQ</a>
     </div>
-
     <script>
         function applyTheme() {
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
@@ -146,7 +147,6 @@
                 el.style.color = Telegram.WebApp.themeParams.text_color;
             });
         }
-
         function hideLoader() {
             document.getElementById('loader').style.opacity = '0';
             setTimeout(() => {
@@ -154,12 +154,10 @@
                 document.getElementById('home').style.display = 'block';
             }, 500);
         }
-
         window.addEventListener('load', function() {
             applyTheme();
             hideLoader();
         });
-
         Telegram.WebApp.onEvent('themeChanged', applyTheme);
     </script>
 </body>
