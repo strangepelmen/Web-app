@@ -34,16 +34,14 @@
         }
         .menu-bar {
             position: fixed;
-            bottom: 10px;
-            width: calc(100% - 20px);
-            margin: 0 10px;
+            bottom: 0;
+            width: 100%;
             display: flex;
             justify-content: space-around;
             padding: 10px;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
             font-size: 18px;
             background-color: var(--tg-theme-bg-color);
-            border-radius: 15px;
         }
         .menu-bar a {
             text-decoration: none;
@@ -72,6 +70,9 @@
             height: 100px;
             margin: 10px;
             border-radius: 15px;
+        }
+        .space-below {
+            height: 50px; /* Space for the menu bar + 5px */
         }
         #loader {
             position: fixed;
@@ -122,11 +123,12 @@
             <img src="https://via.placeholder.com/100?text=2" alt="Free Image 2">
             <img src="https://via.placeholder.com/100?text=3" alt="Free Image 3">
         </div>
+        <div class="space-below"></div>
     </div>
 
     <div class="menu-bar">
         <a href="#home"><span>🏠</span>Home</a>
-        <a href="#profile"><span>👤</span>My Profile</a>
+        <a href="#profile"><span>👤</span>Profile</a>
         <a href="#mentors"><span>🧑‍🏫</span>Mentors</a>
         <a href="#faq"><span>❓</span>FAQ</a>
     </div>
