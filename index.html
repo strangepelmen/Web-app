@@ -35,13 +35,16 @@
         .menu-bar {
             backdrop-filter: blur(10px);
             position: fixed;
-            bottom: 0;
-            width: 100%;
+            bottom: 10px;
+            width: calc(100% - 20px);
+            margin: 0 10px;
             display: flex;
             justify-content: space-around;
             padding: 15px 0;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
             font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
         }
         .menu-bar a {
             text-decoration: none;
@@ -53,6 +56,7 @@
             background-color: var(--tg-theme-bg-color);
             border-radius: 8px;
             padding: 10px;
+            margin: 5px;
         }
         .menu-bar a span {
             font-size: 24px;
