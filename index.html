@@ -21,10 +21,6 @@
             padding: 20px;
             margin: 0 auto;
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
         h1 {
             margin-bottom: 20px;
@@ -39,10 +35,9 @@
         .menu-bar {
             position: fixed;
             bottom: 0;
-            left: 0;
             width: 100%;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: center;
             padding: 10px;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
             font-size: 18px;
@@ -58,6 +53,7 @@
             background-color: var(--tg-theme-secondary-bg-color);
             border-radius: 8px;
             padding: 5px;
+            margin: 0 5px; /* Add space between buttons */
             width: 60px;
             justify-content: center;
         }
@@ -110,8 +106,9 @@
     <div id="loader">
         <div class="loader-spin"></div>
     </div>
+
     <div class="container" id="home" style="display: none;">
-        <div style="font-size: 100px;"></div>
+        <div style="font-size: 100px;">📚</div>
         <h1>Mentors Search App</h1>
         <p>
             Learning is a continuous journey, and finding the right mentor can make all the difference. Mentors provide guidance, support, and wisdom that can help you navigate your path to success.
@@ -129,10 +126,11 @@
         </div>
         <div class="space-below"></div>
     </div>
+
     <div class="menu-bar">
-        <a href="#home"><span></span>Home</a>
-        <a href="#profile"><span></span>Profile</a>
-        <a href="#mentors"><span></span>Mentors</a>
+        <a href="#home"><span>🏠</span>Home</a>
+        <a href="#profile"><span>👤</span>Profile</a>
+        <a href="#mentors"><span>🧑‍🏫</span>Mentors</a>
         <a href="#faq"><span>❓</span>FAQ</a>
     </div>
     <script>
