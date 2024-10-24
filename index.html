@@ -34,7 +34,6 @@
         }
         .menu-bar {
             background-color: var(--tg-theme-bg-color);
-            color: var(--tg-theme-bg-color);
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -48,6 +47,24 @@
             text-decoration: none;
             color: var(--tg-theme-bg-color);
             font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-bar a span {
+            font-size: 24px;
+            color: var(--tg-theme-bg-color);
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .image-container img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 15px;
         }
     </style>
 </head>
@@ -64,13 +81,18 @@
         <p>
             Whether you're just starting out or looking to advance in your career, having a mentor can help you stay focused, motivated, and on the right track.
         </p>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/100" alt="Sample Image 1">
+            <img src="https://via.placeholder.com/100" alt="Sample Image 2">
+            <img src="https://via.placeholder.com/100" alt="Sample Image 3">
+        </div>
     </div>
 
     <div class="menu-bar">
-        <a href="#home">Home</a>
-        <a href="#profile">My Profile</a>
-        <a href="#mentors">Mentors</a>
-        <a href="#faq">FAQ</a>
+        <a href="#home"><span>🏠</span>Home</a>
+        <a href="#profile"><span>👤</span>My Profile</a>
+        <a href="#mentors"><span>🧑‍🏫</span>Mentors</a>
+        <a href="#faq"><span>❓</span>FAQ</a>
     </div>
 
     <script>
@@ -80,6 +102,9 @@
             document.querySelector('.menu-bar').style.backgroundColor = Telegram.WebApp.themeParams.bg_color;
             document.querySelectorAll('.menu-bar a').forEach(function(el) {
                 el.style.color = Telegram.WebApp.themeParams.bg_color;
+            });
+            document.querySelectorAll('.menu-bar span').forEach(function(el) {
+                el.style.color = Telegram.WebApp.themeParams.text_color;
             });
         }
 
