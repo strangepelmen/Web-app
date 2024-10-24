@@ -39,15 +39,12 @@
         .menu-bar {
             position: fixed;
             bottom: 0;
-            width: 100%;
+            width: calc(100% - 40px); /* Added margin for left and right */
             display: flex;
-            justify-content: space-around;
-            padding: 8px 0;
+            justify-content: space-between; /* Ensure buttons are evenly spaced */
+            padding: 8px 20px; /* Add more space to the sides */
             background-color: var(--tg-theme-bg-color);
             border-radius: 0;
-            padding-bottom: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
         }
         .menu-bar a {
             text-decoration: none;
@@ -61,7 +58,6 @@
             padding: 8px;
             width: 80px;
             height: 40px; /* Vertically smaller */
-            margin: 0 5px;
         }
         .menu-bar a span {
             font-size: 20px;
