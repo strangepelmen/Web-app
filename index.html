@@ -56,9 +56,10 @@
             margin: 2px;
             width: 60px;
             transition: background-color 0.3s;
+            justify-content: center;
         }
         .menu-bar a:hover {
-            background-color: var(--tg-theme-hover-bg-color);
+            background-color: var(--tg-theme-text-color);
         }
         .menu-bar a span {
             font-size: 20px;
@@ -146,7 +147,7 @@
                 el.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             });
             document.querySelectorAll('.menu-bar a:hover').forEach(function(el) {
-                el.style.backgroundColor = Telegram.WebApp.themeParams.hover_bg_color;
+                el.style.backgroundColor = Telegram.WebApp.themeParams.text_color;
             });
             document.querySelectorAll('.menu-bar span').forEach(function(el) {
                 el.style.color = Telegram.WebApp.themeParams.text_color;
