@@ -11,22 +11,17 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
         .container {
             text-align: center;
             max-width: 600px;
             padding: 20px;
-            background-color: var(--tg-theme-secondary-bg-color);
-            border-radius: 8px;
+            margin: 0 auto;
         }
         h1 {
             margin-bottom: 20px;
         }
-        p, ul {
+        p {
             background-color: var(--tg-theme-secondary-bg-color);
             color: var(--tg-theme-text-color);
         }
@@ -37,34 +32,49 @@
         ul li {
             margin-bottom: 10px;
         }
+        .menu-bar {
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-bar a {
+            text-decoration: none;
+            color: var(--tg-theme-text-color);
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="home">
         <div style="font-size: 100px;">📚</div>
         <h1>Mentors Search App</h1>
         <p>
-            Finding the right mentor in your field is crucial for your growth and success. A mentor provides guidance, support, and invaluable insights that help you navigate your academic and professional journey with confidence.
+            Learning is a continuous journey, and finding the right mentor can make all the difference. Mentors provide guidance, support, and wisdom that can help you navigate your path to success.
         </p>
-        <h2>Основные функции бота</h2>
-        <ul>
-            <li>Регистрация наставника</li>
-            <li>Поиск наставника</li>
-            <li>Интеграция с Telegram Mini-App</li>
-            <li>Подтверждение подписки</li>
-            <li>Полезная информация</li>
-            <li>Управление сообщениями</li>
-            <li>Аналитика</li>
-            <li>Подписка на канал "Немецкий Гастарбайтер"</li>
-        </ul>
+    </div>
+
+    <div class="menu-bar">
+        <a href="#home">Home</a>
+        <a href="#profile">My Profile</a>
+        <a href="#mentors">Mentors</a>
+        <a href="#faq">FAQ</a>
     </div>
 
     <script>
-        Telegram.WebApp.onEvent('themeChanged', applyTheme);
         function applyTheme() {
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             document.body.style.color = Telegram.WebApp.themeParams.text_color;
+            document.querySelector('.menu-bar').style.backgroundColor = Telegram.WebApp.themeParams.bg_color;
+            document.querySelector('.menu-bar').style.color = Telegram.WebApp.themeParams.text_color;
         }
+
+        Telegram.WebApp.onEvent('themeChanged', applyTheme);
         applyTheme();
     </script>
 </body>
