@@ -24,29 +24,32 @@
         p {
             background-color: var(--tg-theme-secondary-bg-color);
             color: var(--tg-theme-text-color);
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 8px;
         }
         .menu-bar {
             background-color: var(--tg-theme-bg-color);
-            color: var(--tg-theme-text-color);
+            color: var(--tg-theme-bg-color);
             position: fixed;
             bottom: 0;
             width: 100%;
             display: flex;
             justify-content: space-around;
-            padding: 10px 0;
+            padding: 15px 0;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            font-size: 18px;
         }
         .menu-bar a {
             text-decoration: none;
-            color: var(--tg-theme-text-color);
+            color: var(--tg-theme-bg-color);
             font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-bar a span {
+            font-size: 24px;
         }
     </style>
 </head>
@@ -57,13 +60,19 @@
         <p>
             Learning is a continuous journey, and finding the right mentor can make all the difference. Mentors provide guidance, support, and wisdom that can help you navigate your path to success.
         </p>
+        <p>
+            It's crucial to seek out those who have walked the path before you. Mentors can offer you the insights and encouragement needed to overcome obstacles and achieve your goals.
+        </p>
+        <p>
+            Whether you're just starting out or looking to advance in your career, having a mentor can help you stay focused, motivated, and on the right track.
+        </p>
     </div>
 
     <div class="menu-bar">
-        <a href="#home">Home</a>
-        <a href="#profile">My Profile</a>
-        <a href="#mentors">Mentors</a>
-        <a href="#faq">FAQ</a>
+        <a href="#home"><span>🏠</span>Home</a>
+        <a href="#profile"><span>👤</span>My Profile</a>
+        <a href="#mentors"><span>🧑‍🏫</span>Mentors</a>
+        <a href="#faq"><span>❓</span>FAQ</a>
     </div>
 
     <script>
@@ -71,7 +80,9 @@
             document.body.style.backgroundColor = Telegram.WebApp.themeParams.secondary_bg_color;
             document.body.style.color = Telegram.WebApp.themeParams.text_color;
             document.querySelector('.menu-bar').style.backgroundColor = Telegram.WebApp.themeParams.bg_color;
-            document.querySelector('.menu-bar').style.color = Telegram.WebApp.themeParams.text_color;
+            document.querySelectorAll('.menu-bar a').forEach(function(el) {
+                el.style.color = Telegram.WebApp.themeParams.bg_color;
+            });
         }
 
         Telegram.WebApp.onEvent('themeChanged', applyTheme);
