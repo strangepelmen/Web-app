@@ -22,10 +22,6 @@
             margin: 0 auto;
             flex: 1;
         }
-        .emoji {
-            font-size: 100px;
-            margin-top: 20px;
-        }
         h1 {
             margin-bottom: 20px;
         }
@@ -36,6 +32,18 @@
             padding: 15px;
             border-radius: 8px;
             line-height: 1.5;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: left;
         }
         .menu-bar {
             position: fixed;
@@ -66,6 +74,12 @@
         .menu-bar a span {
             font-size: 20px;
             color: var(--tg-theme-text-color); /* Text color matching user's theme */
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
         }
         #loader {
             position: fixed;
@@ -100,7 +114,7 @@
     <div id="loader">
         <div class="loader-spin"></div>
     </div>
-    <div class="container" id="home" style="display: none;">
+    <div class="container page" id="home" style="display: none;">
         <div class="emoji">🎓</div> <!-- Big emoji at the top -->
         <h1>Mentors Search App</h1>
         <p>
@@ -114,9 +128,33 @@
         </p>
         <div class="spacer"></div> <!-- Extra space at the bottom -->
     </div>
+    <div class="container page" id="mentor" style="display: none;">
+        <h1>Student Guidelines</h1>
+        <p>
+            As a student, it's important to take proactive steps in your learning journey. Here are some guidelines to help you make the most of your mentorship experience:
+        </p>
+        <ul>
+            <li>1. Set clear goals for what you want to achieve.</li>
+            <li>2. Communicate openly and honestly with your mentor.</li>
+            <li>3. Be open to feedback and willing to learn.</li>
+            <li>4. Take initiative and be proactive in seeking guidance.</li>
+            <li>5. Keep track of your progress and reflect on your growth.</li>
+        </ul>
+        <p>
+            Remember, the more effort you put into your mentorship, the more you'll get out of it. Stay dedicated, be patient, and never stop striving for excellence. Your mentor is there to help you, but your success ultimately depends on your commitment and perseverance.
+        </p>
+        <h2>Bot Functions for Students</h2>
+        <ul>
+            <li><b>Search for Mentors:</b> Easily find and connect with mentors who align with your goals.</li>
+            <li><b>Schedule Meetings:</b> Arrange and manage meetings with your mentor effortlessly.</li>
+            <li><b>Track Progress:</b> Keep track of your learning milestones and achievements.</li>
+            <li><b>Resource Library:</b> Access a wealth of resources and materials recommended by mentors.</li>
+            <li><b>Feedback:</b> Receive and provide feedback to ensure a productive mentorship relationship.</li>
+        </ul>
+    </div>
     <div class="menu-bar">
-        <a href="index.html"><span>🏠</span>Main</a>
-        <a href="#profile"><span>👤</span>Profile</a>
+        <a href="#" onclick="showPage('home')"><span>🏠</span>Main</a>
+        <a href="#" onclick="showPage('profile')"><span>👤</span>Profile</a>
         <a href="page2.html"><span>📚</span>Mentor</a>
         <a href="#faq"><span>❓</span>FAQ</a>
     </div>
