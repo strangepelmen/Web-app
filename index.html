@@ -40,32 +40,32 @@
         .menu-bar {
             position: fixed;
             bottom: 0;
-            width: calc(100% - 40px); /* Added margin for left and right */
+            width: calc(100% - 40px);
             display: flex;
-            justify-content: space-around; /* Ensure buttons are evenly spaced */
-            padding: 8px 20px; /* Add more space to the sides */
+            justify-content: space-around;
+            padding: 8px 20px;
             background-color: var(--tg-theme-bg-color);
             border-radius: 0;
         }
         .menu-bar a {
             text-decoration: none;
-            color: var(--tg-theme-text-color); /* Text color matching user's theme */
+            color: var(--tg-theme-text-color);
             font-size: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Center text */
+            justify-content: center;
             background-color: var(--tg-theme-secondary-bg-color);
             border-radius: 8px;
-            padding: 10px; /* Increased padding for bigger buttons */
-            width: 100px; /* Uniform width */
-            height: 50px; /* Uniform height */
+            padding: 10px;
+            width: 100px;
+            height: 50px;
             box-sizing: border-box;
-            margin: 0 10px; /* Added space between buttons */
+            margin: 0 10px;
         }
         .menu-bar a span {
             font-size: 20px;
-            color: var(--tg-theme-text-color); /* Text color matching user's theme */
+            color: var(--tg-theme-text-color);
         }
         #loader {
             position: fixed;
@@ -101,7 +101,7 @@
         <div class="loader-spin"></div>
     </div>
     <div class="container" id="home" style="display: none;">
-        <div class="emoji"></div> <!-- Big emoji at the top -->
+        <div class="emoji">👋</div> <!-- Big emoji at the top -->
         <h1>Mentors Search App</h1>
         <p>
             Welcome! Our bot is here to help you find the perfect mentor for your journey. Whether you're just starting out or looking to take your career to the next level, we're here to guide you every step of the way.
@@ -112,9 +112,10 @@
         <p>
             Remember, learning is a continuous journey. Stay focused, stay motivated, and always strive for success. We're here to help you navigate this path and find the mentor that's right for you.
         </p>
-        <div class="spacer"></div> <!-- Extra space at the bottom -->
+        <div class="spacer"></div>
     </div>
     <div class="container" id="profile" style="display: none;">
+        <div class="emoji">🎓</div>
         <h1>Student Rights</h1>
         <p>
             As a student, you have the right to access quality education, receive guidance and mentorship, and be treated with respect and dignity. We're committed to helping you exercise these rights to reach your full potential.
@@ -132,10 +133,10 @@
         </p>
     </div>
     <div class="menu-bar">
-        <a href="#home"><span></span>Main</a>
-        <a href="#profile"><span></span>Profile</a>
-        <a href="#mentors"><span></span>Mentor</a>
-        <a href="#faq"><span>❓</span>FAQ</a>
+        <a href="#home" onclick="showSection('home')"><span>🏠</span>Main</a>
+        <a href="#profile" onclick="showSection('profile')"><span>👤</span>Profile</a>
+        <a href="#mentors" onclick="showSection('mentors')"><span>💼</span>Mentor</a>
+        <a href="#faq" onclick="showSection('faq')"><span>❓</span>FAQ</a>
     </div>
     <script>
         function applyTheme() {
@@ -152,6 +153,12 @@
         function hideLoader() {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('home').style.display = 'block';
+        }
+        function showSection(sectionId) {
+            document.querySelectorAll('.container').forEach(function(container) {
+                container.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
         }
         window.addEventListener('load', function() {
             applyTheme();
